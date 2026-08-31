@@ -1,0 +1,54 @@
+{
+  "items": [
+    {
+      "nombre": "Café filtrado",
+      "foto": "",
+      "precio": "$7.000",
+      "detalle": "De la región, tostión propia",
+      "categoria": "Café",
+      "encuadre": "completa",
+      "enfoque": "centro",
+      "activo": true
+    },
+    {
+      "nombre": "Capuchino",
+      "foto": "",
+      "precio": "$9.500",
+      "detalle": "",
+      "categoria": "Café",
+      "encuadre": "completa",
+      "enfoque": "centro",
+      "activo": true
+    },
+    {
+      "nombre": "Pan de yuca",
+      "foto": "",
+      "precio": "$4.000",
+      "detalle": "Recién horneado",
+      "categoria": "Para acompañar",
+      "encuadre": "completa",
+      "enfoque": "centro",
+      "activo": true
+    },
+    {
+      "nombre": "Torta de mandarina",
+      "foto": "",
+      "precio": "$8.500",
+      "detalle": "Por porción",
+      "categoria": "Para acompañar",
+      "encuadre": "completa",
+      "enfoque": "centro",
+      "activo": true
+    },
+    {
+      "nombre": "Cata de café",
+      "foto": "",
+      "precio": "$45.000",
+      "detalle": "Sábados, por persona",
+      "categoria": "Experiencias",
+      "encuadre": "completa",
+      "enfoque": "centro",
+      "activo": true
+    }
+  ]
+}

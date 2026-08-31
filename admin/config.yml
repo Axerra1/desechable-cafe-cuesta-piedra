@@ -1,0 +1,282 @@
+{
+  "backend": {
+    "name": "git-gateway",
+    "branch": "main"
+  },
+  "media_folder": "fotos/subidas",
+  "public_folder": "fotos/subidas",
+  "locale": "es",
+  "site_url": "/",
+  "display_url": "/",
+  "collections": [
+    {
+      "name": "contenido",
+      "label": "Mi pagina",
+      "files": [
+        {
+          "file": "contenido/catalogo.json",
+          "name": "experiencias",
+          "label": "1. Mis experiencias",
+          "description": "Lo que se ve en tu pagina. Cambia un precio, sube una foto o esconde una experiencia. Al guardar, tu pagina se actualiza en un minuto.",
+          "fields": [
+            {
+              "name": "items",
+              "label": "Experiencias",
+              "label_singular": "experiencia",
+              "widget": "list",
+              "collapsed": false,
+              "summary": "{{fields.nombre}}",
+              "fields": [
+                {
+                  "name": "nombre",
+                  "label": "Nombre de la experiencia",
+                  "widget": "string"
+                },
+                {
+                  "name": "foto",
+                  "label": "Foto",
+                  "widget": "image",
+                  "required": false,
+                  "hint": "Toca aquí para subir una foto de tu celular o computador."
+                },
+                {
+                  "name": "encuadre",
+                  "label": "Cómo se ve la foto",
+                  "widget": "select",
+                  "required": false,
+                  "default": "completa",
+                  "options": [
+                    {
+                      "label": "Completa (no se recorta nada)",
+                      "value": "completa"
+                    },
+                    {
+                      "label": "Cuadrada",
+                      "value": "cuadrada"
+                    },
+                    {
+                      "label": "Horizontal (panorámica)",
+                      "value": "horizontal"
+                    },
+                    {
+                      "label": "Vertical (alta)",
+                      "value": "vertical"
+                    }
+                  ],
+                  "hint": "Si eliges una forma, la foto se recorta para llenarla. Usa 'Enfoque' para decidir qué parte se conserva."
+                },
+                {
+                  "name": "enfoque",
+                  "label": "Enfoque del recorte",
+                  "widget": "select",
+                  "required": false,
+                  "default": "centro",
+                  "options": [
+                    {
+                      "label": "Centro",
+                      "value": "centro"
+                    },
+                    {
+                      "label": "Arriba (caras, cielo)",
+                      "value": "arriba"
+                    },
+                    {
+                      "label": "Abajo",
+                      "value": "abajo"
+                    },
+                    {
+                      "label": "Izquierda",
+                      "value": "izquierda"
+                    },
+                    {
+                      "label": "Derecha",
+                      "value": "derecha"
+                    }
+                  ],
+                  "hint": "Solo aplica si arriba elegiste una forma distinta de 'Completa'."
+                },
+                {
+                  "name": "precio",
+                  "label": "Precio",
+                  "widget": "string",
+                  "required": false,
+                  "hint": "Como quieres que se vea: $190.000. Vacío = dice 'Consultar precio'."
+                },
+                {
+                  "name": "detalle",
+                  "label": "Descripción",
+                  "widget": "text",
+                  "required": false,
+                  "hint": "Duración, dónde es y qué incluye."
+                },
+                {
+                  "name": "categoria",
+                  "label": "Categoría",
+                  "widget": "string",
+                  "required": false,
+                  "hint": "El grupo donde aparece. Si escribes una nueva, se crea sola."
+                },
+                {
+                  "name": "activo",
+                  "label": "Visible en la página",
+                  "widget": "boolean",
+                  "default": true,
+                  "hint": "Apágalo para esconder una experiencia de temporada sin borrarla."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "file": "contenido/galeria.json",
+          "name": "galeria",
+          "label": "2. Galeria de fotos",
+          "description": "Las fotos sueltas de tu pagina. El orden de la lista es el orden en que se ven.",
+          "fields": [
+            {
+              "name": "fotos",
+              "label": "Fotos",
+              "label_singular": "foto",
+              "widget": "list",
+              "collapsed": false,
+              "field": {
+                "name": "imagen",
+                "label": "Foto",
+                "widget": "image"
+              }
+            }
+          ]
+        },
+        {
+          "file": "contenido/textos.json",
+          "name": "textos",
+          "label": "3. Textos y video",
+          "description": "Lo que va fuera del catalogo.",
+          "fields": [
+            {
+              "name": "eslogan",
+              "label": "Frase de portada",
+              "widget": "string",
+              "required": false
+            },
+            {
+              "name": "nosotros",
+              "label": "Quienes somos",
+              "widget": "text",
+              "required": false
+            },
+            {
+              "name": "video",
+              "label": "Video de portada",
+              "widget": "string",
+              "required": false,
+              "hint": "Pega el enlace de YouTube. Vacio = se queda el actual."
+            },
+            {
+              "name": "horario",
+              "label": "Horario",
+              "widget": "string",
+              "required": false
+            }
+          ]
+        },
+        {
+          "file": "contenido/traducciones.json",
+          "name": "traducciones",
+          "label": "4. Traducciones (opcional)",
+          "description": "Solo si quieres que tus experiencias se vean en otros idiomas. Lo que dejes vacio se muestra en espanol: nunca queda en blanco.",
+          "fields": [
+            {
+              "name": "items",
+              "label": "Traducciones",
+              "label_singular": "traduccion",
+              "widget": "list",
+              "collapsed": true,
+              "summary": "{{fields.nombre}}",
+              "fields": [
+                {
+                  "name": "nombre",
+                  "label": "¿Cuál experiencia?",
+                  "widget": "string",
+                  "hint": "Escríbelo IGUAL que en la sección Experiencias."
+                },
+                {
+                  "name": "nombre_en",
+                  "label": "Nombre en inglés",
+                  "widget": "string",
+                  "required": false
+                },
+                {
+                  "name": "detalle_en",
+                  "label": "Descripción en inglés",
+                  "widget": "text",
+                  "required": false
+                },
+                {
+                  "name": "categoria_en",
+                  "label": "Categoría en inglés",
+                  "widget": "string",
+                  "required": false
+                },
+                {
+                  "name": "nombre_fr",
+                  "label": "Nombre en francés",
+                  "widget": "string",
+                  "required": false
+                },
+                {
+                  "name": "detalle_fr",
+                  "label": "Descripción en francés",
+                  "widget": "text",
+                  "required": false
+                },
+                {
+                  "name": "categoria_fr",
+                  "label": "Categoría en francés",
+                  "widget": "string",
+                  "required": false
+                },
+                {
+                  "name": "nombre_pt",
+                  "label": "Nombre en portugués",
+                  "widget": "string",
+                  "required": false
+                },
+                {
+                  "name": "detalle_pt",
+                  "label": "Descripción en portugués",
+                  "widget": "text",
+                  "required": false
+                },
+                {
+                  "name": "categoria_pt",
+                  "label": "Categoría en portugués",
+                  "widget": "string",
+                  "required": false
+                },
+                {
+                  "name": "nombre_zh",
+                  "label": "Nombre en mandarín",
+                  "widget": "string",
+                  "required": false
+                },
+                {
+                  "name": "detalle_zh",
+                  "label": "Descripción en mandarín",
+                  "widget": "text",
+                  "required": false
+                },
+                {
+                  "name": "categoria_zh",
+                  "label": "Categoría en mandarín",
+                  "widget": "string",
+                  "required": false
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
